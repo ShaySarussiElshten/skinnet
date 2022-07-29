@@ -1,0 +1,84 @@
+how to run new update in migratin & Database
+
+1. add property or somthing i.e :
+
+public class ProductBrand : BaseEntity
+    {
+        public string Name { get; set; }
+
+        //new Property
+        public string G { get; set; } = "5";  <=======
+}
+
+
+==>>> NOTEEEEEE <=======
+
+BEFORE THIS INTRUCTURE PLESE SHOT DOWN DOTNET WATHCH RUNNING
+
++++++++++++++++++========
+
+2. drop data from database
+dotnet ef database drop  -p Infrastructure -s API
+
+(please command this line from main folder => my-skin-5)
+
+3. remove Migrations
+dotnet ef migrations remove -p Infrastructure -s API
+
+(please command this line from main folder => my-skin-5)
+
+4. add migration 
+dotnet ef migrations add <any name of migration> -p Infrastructure -s API -o Data/Migrations
+
+i.e : <any name of migration>   Infrastructure IS THE NAME OF MIGRATION
+dotnet ef migrations add Infrastructure -p Infrastructure -s API -o Data/Migrations
+
+(please command this line from main folder => my-skin-5)
+
+5. update Database
+dotnet ef database update  -p Infrastructure -s API
+
+(please command this line from main folder => my-skin-5)
+
+
+6. you can enter new values that isert to database 
+in Infrastructure / Data / SeedData
+
+we have a json file that run when we start th aplication so in that file we
+can insert propery like 
+
+
+{
+    "Id": 3,
+    "Name": "VS Code",
+    "G":"7"   <=======
+},
+
+
+
+6. run project
+(please command this line from API folder => CD API)
+
+dotnet watch run   
+
+7. open data base = >
+
+press shift+windows+p and write Sqlite
+
+and if you looked in the left side , yoe have seen "press square" with the name of Sqlite Explorer
+
+press sow table and we see the databse
+
+Id	Name	     G
+1	Angular	     5
+2	NetCore	     5
+3	VS Code	     7
+4	React	     5
+5	Typescript	 5
+6	Redis	     5
+
+
+
+
+
+
