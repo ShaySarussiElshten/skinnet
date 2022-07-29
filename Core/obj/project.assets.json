@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/shay.s.e/Desktop/my-skin-5/Core/Core.csproj",
+      "projectUniqueName": "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/Core/Core.csproj",
       "projectName": "Core",
-      "projectPath": "/Users/shay.s.e/Desktop/my-skin-5/Core/Core.csproj",
+      "projectPath": "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/Core/Core.csproj",
       "packagesPath": "/Users/shay.s.e/.nuget/packages/",
-      "outputPath": "/Users/shay.s.e/Desktop/my-skin-5/Core/obj/",
+      "outputPath": "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/Core/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/shay.s.e/.nuget/NuGet/NuGet.Config"

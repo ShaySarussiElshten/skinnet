@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MDaivo5QskgutRHCGyP5lHH+6NqJg57ysws+nZuBSOiYMLMwHxJ/HWzVaBBhDLVrJDXX0dbIbRO2xED5HoGCGQ==",
+  "dgSpecHash": "yYq7NpaA7YmuDQ11jUN7VJkD2DAhKjErow6LNxGumiqxWX4CSNgWLhYYOJx75GZhylX+3HbwGOk/Dv0CeJJe0g==",
   "success": true,
-  "projectFilePath": "/Users/shay.s.e/Desktop/my-skin-5/Infrastructure/Infrastructure.csproj",
+  "projectFilePath": "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/Infrastructure/Infrastructure.csproj",
   "expectedPackageFiles": [
     "/Users/shay.s.e/.nuget/packages/microsoft.data.sqlite.core/6.0.2/microsoft.data.sqlite.core.6.0.2.nupkg.sha512",
     "/Users/shay.s.e/.nuget/packages/microsoft.entityframeworkcore/6.0.2/microsoft.entityframeworkcore.6.0.2.nupkg.sha512",

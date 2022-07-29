@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/shay.s.e/Desktop/my-skin-5/API/API.csproj": {}
+    "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/API/API.csproj": {}
   },
   "projects": {
-    "/Users/shay.s.e/Desktop/my-skin-5/API/API.csproj": {
+    "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/API/API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/shay.s.e/Desktop/my-skin-5/API/API.csproj",
+        "projectUniqueName": "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/API/API.csproj",
         "projectName": "API",
-        "projectPath": "/Users/shay.s.e/Desktop/my-skin-5/API/API.csproj",
+        "projectPath": "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/API/API.csproj",
         "packagesPath": "/Users/shay.s.e/.nuget/packages/",
-        "outputPath": "/Users/shay.s.e/Desktop/my-skin-5/API/obj/",
+        "outputPath": "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/shay.s.e/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/shay.s.e/Desktop/my-skin-5/Infrastructure/Infrastructure.csproj": {
-                "projectPath": "/Users/shay.s.e/Desktop/my-skin-5/Infrastructure/Infrastructure.csproj"
+              "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/Infrastructure/Infrastructure.csproj": {
+                "projectPath": "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/Infrastructure/Infrastructure.csproj"
               }
             }
           }
@@ -79,14 +79,14 @@
         }
       }
     },
-    "/Users/shay.s.e/Desktop/my-skin-5/Core/Core.csproj": {
+    "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/Core/Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/shay.s.e/Desktop/my-skin-5/Core/Core.csproj",
+        "projectUniqueName": "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/Core/Core.csproj",
         "projectName": "Core",
-        "projectPath": "/Users/shay.s.e/Desktop/my-skin-5/Core/Core.csproj",
+        "projectPath": "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/Core/Core.csproj",
         "packagesPath": "/Users/shay.s.e/.nuget/packages/",
-        "outputPath": "/Users/shay.s.e/Desktop/my-skin-5/Core/obj/",
+        "outputPath": "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/shay.s.e/.nuget/NuGet/NuGet.Config"
@@ -131,14 +131,14 @@
         }
       }
     },
-    "/Users/shay.s.e/Desktop/my-skin-5/Infrastructure/Infrastructure.csproj": {
+    "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/Infrastructure/Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/shay.s.e/Desktop/my-skin-5/Infrastructure/Infrastructure.csproj",
+        "projectUniqueName": "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/Infrastructure/Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "/Users/shay.s.e/Desktop/my-skin-5/Infrastructure/Infrastructure.csproj",
+        "projectPath": "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/Infrastructure/Infrastructure.csproj",
         "packagesPath": "/Users/shay.s.e/.nuget/packages/",
-        "outputPath": "/Users/shay.s.e/Desktop/my-skin-5/Infrastructure/obj/",
+        "outputPath": "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/shay.s.e/.nuget/NuGet/NuGet.Config"
@@ -153,8 +153,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/shay.s.e/Desktop/my-skin-5/Core/Core.csproj": {
-                "projectPath": "/Users/shay.s.e/Desktop/my-skin-5/Core/Core.csproj"
+              "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/Core/Core.csproj": {
+                "projectPath": "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/Core/Core.csproj"
               }
             }
           }
