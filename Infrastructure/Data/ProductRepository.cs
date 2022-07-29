@@ -38,6 +38,7 @@ namespace Infrastructure.Data
         }
         public async Task<IReadOnlyList<ProductType>> GetProductTypesAsync()
         {
+            //d
             return await _context.ProductTypes.ToListAsync();
         }
 
