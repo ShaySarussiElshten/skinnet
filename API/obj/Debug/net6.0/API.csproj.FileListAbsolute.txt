@@ -172,3 +172,5 @@
 /Users/shay.s.e/Desktop/my-skin-5-extends-rpg/API/obj/Debug/net6.0/API.pdb
 /Users/shay.s.e/Desktop/my-skin-5-extends-rpg/API/obj/Debug/net6.0/API.genruntimeconfig.cache
 /Users/shay.s.e/Desktop/my-skin-5-extends-rpg/API/obj/Debug/net6.0/ref/API.dll
+/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/API/bin/Debug/net6.0/AutoMapper.dll
+/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/API/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

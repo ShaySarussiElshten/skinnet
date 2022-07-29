@@ -7,6 +7,7 @@ using Infrastructure.Data;
 using Infrastructure.Data.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using API.Helpers;
 
 namespace API
 {
@@ -27,6 +28,7 @@ namespace API
         {
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICharacterRepository, CharacterRepository>();
+            services.AddAutoMapper(typeof(AutoMapperProfile));
             services.AddControllers();
             services.AddDbContext<StoreContext>(x =>
             {

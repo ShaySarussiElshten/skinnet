@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "f+9V0AUsX33JAlmDO6htIqihwmQ0XTryZdePiariGprXMB5hHn0Y8qCSFoOJso+/VlTQxEQz+Vv21kDaeXnsCA==",
+  "dgSpecHash": "zU3qDbTYCYuq2VNBbSn3LH7yisEJpX4dNFS76k6Nyg953Zl5qW2IL2+5TorDsNc8nkoYfHvsj5N4LX4rwixxqg==",
   "success": true,
   "projectFilePath": "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/API/API.csproj",
   "expectedPackageFiles": [
+    "/Users/shay.s.e/.nuget/packages/automapper/11.0.0/automapper.11.0.0.nupkg.sha512",
+    "/Users/shay.s.e/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/11.0.0/automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "/Users/shay.s.e/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
+    "/Users/shay.s.e/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/shay.s.e/.nuget/packages/microsoft.data.sqlite.core/6.0.2/microsoft.data.sqlite.core.6.0.2.nupkg.sha512",
     "/Users/shay.s.e/.nuget/packages/microsoft.entityframeworkcore/6.0.2/microsoft.entityframeworkcore.6.0.2.nupkg.sha512",
     "/Users/shay.s.e/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.2/microsoft.entityframeworkcore.abstractions.6.0.2.nupkg.sha512",

@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "yYq7NpaA7YmuDQ11jUN7VJkD2DAhKjErow6LNxGumiqxWX4CSNgWLhYYOJx75GZhylX+3HbwGOk/Dv0CeJJe0g==",
+  "dgSpecHash": "+mE8yof1uQHU1lSmZqqfh7n9546BSGTGRlu+vXfrGhlsyD4vRRPaJtMdHVwbiBsE0LvksndAPC7JLITXsR6SVA==",
   "success": true,
   "projectFilePath": "/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/Infrastructure/Infrastructure.csproj",
   "expectedPackageFiles": [
+    "/Users/shay.s.e/.nuget/packages/automapper/11.0.0/automapper.11.0.0.nupkg.sha512",
+    "/Users/shay.s.e/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/11.0.0/automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "/Users/shay.s.e/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/shay.s.e/.nuget/packages/microsoft.data.sqlite.core/6.0.2/microsoft.data.sqlite.core.6.0.2.nupkg.sha512",
     "/Users/shay.s.e/.nuget/packages/microsoft.entityframeworkcore/6.0.2/microsoft.entityframeworkcore.6.0.2.nupkg.sha512",
     "/Users/shay.s.e/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.2/microsoft.entityframeworkcore.abstractions.6.0.2.nupkg.sha512",
