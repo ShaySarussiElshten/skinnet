@@ -10,13 +10,43 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20220728165602_Infrastructure")]
-    partial class Infrastructure
+    [Migration("20220731111554_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.2");
+
+            modelBuilder.Entity("Core.Entities.Character", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Class")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Defense")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("HitPoints")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Intelligence")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Strength")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Characters");
+                });
 
             modelBuilder.Entity("Core.Entities.Product", b =>
                 {
