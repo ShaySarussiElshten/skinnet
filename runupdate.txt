@@ -78,6 +78,10 @@ Id	Name	     G
 6	Redis	     5
 
 
+8. to hadle migration to identity.db run: 
+
+dotnet ef migrations add identityInitial -p Infrastructure -s API -c AppIdentityDbContext -o Identity/Migrations
+
 
 
 

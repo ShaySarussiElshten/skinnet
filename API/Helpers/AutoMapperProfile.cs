@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Core.Entities;
 using Core.Dtos.Character;
+using Core.Entities.Identity;
+using Core.Dtos;
 
 namespace API.Helpers
 {
@@ -15,6 +17,7 @@ namespace API.Helpers
             CreateMap<Character, GetCharacterDto>();
             CreateMap<AddCharacterDto, Character>();
             CreateMap<UpdateCharacterDto, Character>();
+            CreateMap<Address, AddressDto>().ReverseMap();
         }
     }
 }
