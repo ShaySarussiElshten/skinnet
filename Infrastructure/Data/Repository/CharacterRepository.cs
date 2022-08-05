@@ -3,6 +3,8 @@ using Core.Entities;
 using Core.Interfaces;
 using Core.Dtos.Character;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Http;
 
 namespace Infrastructure.Data.Repository
 {
@@ -15,29 +17,39 @@ namespace Infrastructure.Data.Repository
 
         private readonly IMapper _mapper;
         private readonly StoreContext _context;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public CharacterRepository(IMapper mapper, StoreContext context)
+        public CharacterRepository(IMapper mapper, StoreContext context,IHttpContextAccessor httpContextAccessor)
         {
             _mapper = mapper;
             _context = context;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<ServiceResponse<List<GetCharacterDto>>> AddCharacter(AddCharacterDto newCharacter)
         {
+
             var serviceResponse = new ServiceResponse<List<GetCharacterDto>>();
             Character character = _mapper.Map<Character>(newCharacter);
+            int id = await GetUserId();
+            character.User = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
             _context.Characters.Add(character);
             await _context.SaveChangesAsync();
             serviceResponse.Data = await _context.Characters
+                .Where(c => c.User.Id == id)
                 .Select(c => _mapper.Map<GetCharacterDto>(c))
                 .ToListAsync();
             return serviceResponse;
         }
 
+
         public async Task<ServiceResponse<List<GetCharacterDto>>> GetAllCharacters()
         {
             var response = new ServiceResponse<List<GetCharacterDto>>();
-            var dbCharacters = await _context.Characters.ToListAsync();
+            int id = await GetUserId();
+            var dbCharacters = await _context.Characters
+                .Where(c => c.User.Id == id)
+                .ToListAsync();
             response.Data = dbCharacters.Select(c => _mapper.Map<GetCharacterDto>(c)).ToList();
             return response;
         }
@@ -99,5 +111,14 @@ namespace Infrastructure.Data.Repository
 
             return response;
         }
+
+        private async Task<int> GetUserId()
+     {
+
+         var id = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+         return Int32.Parse(id);
+     }
+
+        
     }
 }

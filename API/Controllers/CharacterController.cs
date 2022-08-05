@@ -6,10 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Core.Entities;
 using Core.Interfaces;
 using Core.Dtos.Character;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace API.Controllers
 {
+    
     [ApiController]
+    [Authorize]
     [Route("api/[controller]")]
     public class CharacterController : ControllerBase
     {

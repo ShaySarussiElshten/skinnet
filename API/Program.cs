@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace API
 {
@@ -22,7 +23,7 @@ namespace API
                 {
                     var context = services.GetRequiredService<StoreContext>();
                     await context.Database.MigrateAsync();
-                    //await StoreContextSeed.SeedAsync(context, loggerFactory);
+                    await StoreContextSeed.SeedAsync(context, loggerFactory);
                     
                 }
                 catch (Exception ex)
