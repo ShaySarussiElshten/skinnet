@@ -69,3 +69,4 @@
 /Users/shay.s.e/Desktop/my-skin-5-extends-rpg/API/bin/Debug/net6.0/Scrutor.dll
 /Users/shay.s.e/Desktop/my-skin-5-extends-rpg/API/bin/Debug/net6.0/Swashbuckle.AspNetCore.Filters.dll
 /Users/shay.s.e/Desktop/my-skin-5-extends-rpg/API/bin/Debug/net6.0/Swashbuckle.AspNetCore.Filters.Abstractions.dll
+/Users/shay.s.e/Desktop/my-skin-5-extends-rpg/API/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.Certificate.dll
