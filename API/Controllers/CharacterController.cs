@@ -8,6 +8,7 @@ using Core.Interfaces;
 using Core.Dtos.Character;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using API.Errors;
 
 namespace API.Controllers
 {
@@ -48,7 +49,7 @@ namespace API.Controllers
             var response = await _characterService.UpdateCharacter(updatedCharacter);
             if (response.Data == null)
             {
-                return NotFound(response);
+                return NotFound(new ApiResponse(404));;
             }
             return Ok(response);
         }

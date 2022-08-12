@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.Errors;
 using Core.Entities;
 using Core.Interfaces;
 using Infrastructure.Data;
@@ -31,7 +32,9 @@ namespace API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)
         {
-            return await _repo.GetProductByIdAsync(id);
+            var product = await _repo.GetProductByIdAsync(id);
+            if (product == null) return NotFound(new ApiResponse(404));
+            return Ok(product);
         }
 
         [HttpGet("brands")]
