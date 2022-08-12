@@ -37,23 +37,23 @@ namespace API.Controllers
             return Unauthorized(new ApiResponse(401));
         }
 
-        // [HttpGet("validation-error")]
-        // public ActionResult GetValidationError()
-        // {
-        //     ModelState.AddModelError("Problem1", "This is the first error");
-        //     ModelState.AddModelError("Problem2", "This is the second error");
-        //     return ValidationProblem();
-        // }
+        [HttpGet("validation-error")]
+        public ActionResult GetValidationError()
+        {
+            ModelState.AddModelError("Problem1", "This is the first error");
+            ModelState.AddModelError("Problem2", "This is the second error");
+            return ValidationProblem();
+        }
 
-        // [HttpGet("servererror")]
-        // public ActionResult GetServerError()
-        // {
-        //     var thing = _context.Products.Find(42);
+        [HttpGet("servererror")]
+        public ActionResult GetServerError()
+        {
+            var thing = _context.Products.Find(42);
 
-        //     var thingToReturn = thing.ToString();
+            var thingToReturn = thing.ToString();
 
-        //     return Ok();
-        // }
+            return Ok();
+        }
 
         
     }
