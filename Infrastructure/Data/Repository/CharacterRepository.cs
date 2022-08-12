@@ -48,6 +48,8 @@ namespace Infrastructure.Data.Repository
             var response = new ServiceResponse<List<GetCharacterDto>>();
             int id = await GetUserId();
             var dbCharacters = await _context.Characters
+                .Include(c => c.Weapon)
+                .Include(c => c.Skills)
                 .Where(c => c.User.Id == id)
                 .ToListAsync();
             response.Data = dbCharacters.Select(c => _mapper.Map<GetCharacterDto>(c)).ToList();
@@ -57,7 +59,11 @@ namespace Infrastructure.Data.Repository
         public async Task<ServiceResponse<GetCharacterDto>> GetCharacterById(int id)
         {
             var serviceResponse = new ServiceResponse<GetCharacterDto>();
-            var dbCharacter = await _context.Characters.FirstOrDefaultAsync(c => c.Id == id);
+            int userId = await GetUserId();
+            var dbCharacter = await _context.Characters
+                .Include(c => c.Weapon)
+                .Include(c => c.Skills)
+                .FirstOrDefaultAsync(c => c.Id == id && c.User.Id == userId);
             serviceResponse.Data = _mapper.Map<GetCharacterDto>(dbCharacter);
             return serviceResponse;
         }
@@ -69,18 +75,28 @@ namespace Infrastructure.Data.Repository
             try
             {
                 var character = await _context.Characters
+                    .Include(c => c.User)
                     .FirstOrDefaultAsync(c => c.Id == updatedCharacter.Id);
 
-                character.Name = updatedCharacter.Name;
-                character.HitPoints = updatedCharacter.HitPoints;
-                character.Strength = updatedCharacter.Strength;
-                character.Defense = updatedCharacter.Defense;
-                character.Intelligence = updatedCharacter.Intelligence;
-                character.Class = updatedCharacter.Class;
-                
-                await _context.SaveChangesAsync();
-                
-                response.Data = _mapper.Map<GetCharacterDto>(character);
+                int userId = await GetUserId();
+                if (character.User.Id == userId)
+                {
+                    character.Name = updatedCharacter.Name;
+                    character.HitPoints = updatedCharacter.HitPoints;
+                    character.Strength = updatedCharacter.Strength;
+                    character.Defense = updatedCharacter.Defense;
+                    character.Intelligence = updatedCharacter.Intelligence;
+                    character.Class = updatedCharacter.Class;
+
+                    await _context.SaveChangesAsync();
+
+                    response.Data = _mapper.Map<GetCharacterDto>(character);
+                }
+                else
+                {
+                    response.Success = false;
+                    response.Message = "Character not found.";
+                }
             }
             catch (Exception ex)
             {
@@ -90,6 +106,8 @@ namespace Infrastructure.Data.Repository
 
             return response;
         }
+
+        
 
         public async Task<ServiceResponse<List<GetCharacterDto>>> DeleteCharacter(int id)
         {
@@ -97,11 +115,22 @@ namespace Infrastructure.Data.Repository
 
             try
             {
-                Character character = await _context.Characters.FirstAsync(c => c.Id == id);
-                _context.Characters.Remove(character);
-                await _context.SaveChangesAsync();
-
-                response.Data = _context.Characters.Select(c => _mapper.Map<GetCharacterDto>(c)).ToList();
+                int userId = await GetUserId();
+                Character character = await _context.Characters
+                    .FirstOrDefaultAsync(c => c.Id == id && c.User.Id == userId);
+                if (character != null)
+                {
+                    _context.Characters.Remove(character);
+                    await _context.SaveChangesAsync();
+                    response.Data = _context.Characters
+                        .Where(c => c.User.Id == userId)
+                        .Select(c => _mapper.Map<GetCharacterDto>(c)).ToList();
+                }
+                else
+                {
+                    response.Success = false;
+                    response.Message = "Character not found";
+                }
             }
             catch (Exception ex)
             {
@@ -112,12 +141,53 @@ namespace Infrastructure.Data.Repository
             return response;
         }
 
+        public async Task<ServiceResponse<GetCharacterDto>> AddCharacterSkill(AddCharacterSkillDto newCharacterSkill)
+        {
+            var response = new ServiceResponse<GetCharacterDto>();
+            try
+            {
+                
+                int userId = await GetUserId();
+                var character = await _context.Characters
+                    .Include(c => c.Weapon)
+                    .Include(c => c.Skills)
+                    .FirstOrDefaultAsync(c => c.Id == newCharacterSkill.CharacterId &&
+                    c.User.Id == userId);
+
+                if (character == null)
+                {
+                    response.Success = false;
+                    response.Message = "Character not found.";
+                    return response;
+                }
+
+                var skill = await _context.Skills.FirstOrDefaultAsync(s => s.Id == newCharacterSkill.SkillId);
+                if (skill == null)
+                {
+                    response.Success = false;
+                    response.Message = "Skill not found.";
+                    return response;
+                }
+
+                character.Skills.Add(skill);
+                await _context.SaveChangesAsync();
+                response.Data = _mapper.Map<GetCharacterDto>(character);
+
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+
         private async Task<int> GetUserId()
-     {
+        {
 
          var id = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
          return Int32.Parse(id);
-     }
+        }
 
         
     }

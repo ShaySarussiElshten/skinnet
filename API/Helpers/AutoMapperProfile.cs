@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Core.Entities;
 using Core.Dtos.Character;
+using Core.Dtos.Weapon;
+using Core.Dtos.Skill;
 
 namespace API.Helpers
 {
@@ -15,6 +17,9 @@ namespace API.Helpers
             CreateMap<Character, GetCharacterDto>();
             CreateMap<AddCharacterDto, Character>();
             CreateMap<UpdateCharacterDto, Character>();
+            CreateMap<Weapon, GetWeaponDto>();
+            CreateMap<Skill, GetSkillDto>();
+
         }
     }
 }

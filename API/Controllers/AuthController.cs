@@ -9,7 +9,7 @@ using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 
-namespace dotnet_rpg.Controllers
+namespace API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
