@@ -27,6 +27,8 @@ namespace Infrastructure.Data
 
         public DbSet<Skill> Skills { get; set; }
 
+        public DbSet<Basket> Baskets { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
